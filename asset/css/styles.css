@@ -99,24 +99,24 @@ button {
 /*=============== THEME ===============*/
 .change-theme {
   font-size: 1.25rem;
-  color: #fff;
+  color: rgb(235, 90, 55);
   cursor: pointer;
-  transition: .3s;
+  transition: .4s;
 }
 
 .change-theme:hover {
-  color: var(--first-color);
+  font-size: 1.75rem;
 }
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
-  --first-color: hsl(228, 66%, 62%);
-  --second-color: hsl(25, 57%, 54%);
-  --title-color: hsl(228, 8%, 95%);
-  --text-color: hsl(228, 8%, 70%);
-  --border-color: hsl(228, 16%, 14%);
-  --body-color: hsl(228, 12%, 8%);
-  --container-color: hsl(228, 16%, 12%);
+  --first-color: rgb(94, 120, 222);
+  --second-color: rgb(235, 90, 55);
+  --title-color: rgb(241, 242, 243);
+  --text-color: rgb(172, 175, 185);
+  --border-color: rgb(30, 32, 41);
+  --body-color: rgb(18, 19, 23);
+  --container-color: rgb(26, 28, 35);
 }
 
 /*========== Color changes in some parts of the website, in dark theme ==========*/
@@ -153,6 +153,10 @@ body.dark-theme {
 
 .dark-theme .subscribe__description {
   color: var(--text-color);
+}
+
+.dark-theme .footer__logo {
+  color: rgb(235, 90, 55);
 }
 
 .dark-theme::-webkit-scrollbar {
@@ -282,7 +286,6 @@ body.dark-theme {
   background-color: var(--body-color);
   box-shadow: 0 1px 4px hsla(228, 4%, 15%, .1);
   z-index: 99;
-  /* background: white; */
 }
 
 .scroll-header .change-theme {
@@ -439,6 +442,9 @@ body.dark-theme {
 }
 
 .popular__img {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
   border-radius: 1rem;
   margin-bottom: 1rem;
 }
@@ -732,14 +738,15 @@ body.dark-theme {
 
 
 .subscribe__button {
-  border: 2px solid #fff;
   background: rgb(235, 90, 55);
   font-size: var(--small-font-size);
+  border: 2px solid rgb(235, 90, 55);
 }
 
 
 .subscribe__button:hover {
   background-color: rgb(232, 65, 24);
+  border: 2px solid #fff;
 }
 
 /*=============== FOOTER ===============*/
@@ -872,7 +879,7 @@ body.dark-theme {
   display: inline-flex;
   padding: .35rem;
   border-radius: .25rem;
-  color: var(--title-color);
+  color: rgb(232, 65, 24);
   font-size: 1.25rem;
   z-index: var(--z-tooltip);
   transition: .3s;
@@ -881,7 +888,6 @@ body.dark-theme {
 
 .scrollup:hover {
   transform: translateY(-.25rem);
-  color: var(--first-color);
 }
 
 /* Show Scroll Up*/
@@ -1058,7 +1064,7 @@ body.dark-theme {
   .active-link {
     background: none;
     box-shadow: none;
-    color: var(--first-color);
+    color: rgb(235, 90, 55);;
     font-weight: var(--font-medium);
   }
 
@@ -1073,7 +1079,7 @@ body.dark-theme {
   }
 
   .scroll-header .active-link {
-    color: var(--first-color);
+    color: rgb(235, 90, 55);
   }
 
   .home {
