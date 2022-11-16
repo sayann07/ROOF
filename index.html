@@ -64,10 +64,10 @@
                     <p class="home__description">
                         Find a wide variety of properties that suits you well and forget all the difficulties!
                     </p>
-                    <form action="" class="home__email">
+                    <form action="" class="home__email" id="home__email">
                         <i class='bx bx-envelope'></i>
-                        <input type="email" class="home__email-input" placeholder="Enter you e-mail...">
-                        <button class="button">Submit</button>
+                        <input type="email" id="emailid" class="home__email-input" placeholder="Enter your e-mail...">
+                        <button type="submit" class="button">Submit</button>
                     </form>
                     <div class="home__value">
                         <div>
@@ -471,7 +471,46 @@
     </a>
     <script src="asset/js/scrollreveal.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
     <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCTV3DcZBaUKvJ6M3dsAHnLliA7rJLyGm4",
+            authDomain: "roofstack-87a60.firebaseapp.com",
+            databaseURL: "https://roofstack-87a60-default-rtdb.firebaseio.com",
+            projectId: "roofstack-87a60",
+            storageBucket: "roofstack-87a60.appspot.com",
+            messagingSenderId: "56349495343",
+            appId: "1:56349495343:web:bf2195d6e16d0b4442b6da",
+            measurementId: "G-B4TB114EXF"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        var roofStackDB = firebase.database().ref('stackemails')
+
+        document.getElementById(`home__email`).addEventListener('submit', submitForm);
+
+        function submitForm(e){
+            e.preventDefault();
+
+            var emailid = getElementVal("emailid");
+
+            saveEmails(emailid);
+            document.getElementById("home__email").reset();
+        }
+
+        const saveEmails = (emailid) => {
+            var newStack = roofStackDB.push();
+            
+            newStack.set({
+                emailid: emailid,
+            })
+        };
+
+        const getElementVal = (id) => {
+            return document.getElementById(id).value;
+        }
+
         var swiperPopular = new Swiper(".popular__container", {
             spaceBetween: 32,
             grabCursor: true,
